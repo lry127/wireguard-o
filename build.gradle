@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.wireguard'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes['Main-Class'] = 'com.wireguard.UdpBidirectionalForwarder'
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
